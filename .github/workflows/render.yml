@@ -1,0 +1,32 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Verify app imports
+        run: |
+<<<<<<< HEAD
+          python -c "import app; print('Build successful')"
+=======
+          python -c "import app; print('Build successful')"
+>>>>>>> 8b2f73c59de304d3803e0ca5a4310b3082752b85
