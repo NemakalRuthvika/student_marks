@@ -6,7 +6,7 @@
 - Store records in Excel
 - Generate PDF report card
 - Tkinter GUI
-- MySQL database integration
+- Mangodb  database integration
 - Flask web app
 - GitHub + Render deployment ready
 
@@ -29,15 +29,10 @@ http://127.0.0.1:5000
 python gui_tkinter.py
 ```
 
-## MySQL Setup
+## Mangodb  Setup
 
-Open MySQL and run:
+Open Mangodb and run:
 
-```sql
-SOURCE schema.sql;
-```
-
-Or copy and paste the SQL from `schema.sql`.
 
 ## Environment Variables for MySQL
 
@@ -77,7 +72,7 @@ pip install -r requirements.txt
 gunicorn app:app
 ```
 
-7. Add MySQL environment variables if using online MySQL.
+7. Add Mangodb environment variables if using online Mangodb.
 "# student_marks_calculator_full" 
 "# student_marks_calculator_full" 
 "# student_marks" 
