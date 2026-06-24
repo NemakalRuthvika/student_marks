@@ -34,13 +34,13 @@ python gui_tkinter.py
 Open Mangodb and run:
 
 
-## Environment Variables for MySQL
+## Environment Variables for Mangodb 
 
 ```text
-MYSQL_HOST=localhost
-MYSQL_USER=root
-MYSQL_PASSWORD=your_password
-MYSQL_DATABASE=student_db
+Mangodb HOST=localhost
+Mangodb USER=root
+Mangodb PASSWORD=your_password
+Mangodb DATABASE=student_db
 ```
 
 ## GitHub Upload
