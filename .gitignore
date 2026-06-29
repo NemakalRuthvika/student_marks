@@ -3,3 +3,4 @@
 ".env.production" 
 *.env
 .env.*
+atlas-credentials.env
