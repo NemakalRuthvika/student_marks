@@ -1,0 +1,138 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:linear-gradient(135deg,#1e3c72,#2a5298,#4facfe);
+    min-height:100vh;
+    padding:40px;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    color:white;
+    font-size:40px;
+    margin-bottom:30px;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Form Card */
+form{
+    width:650px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Labels */
+label{
+    font-size:17px;
+    font-weight:bold;
+    color:#2c3e50;
+}
+
+/* Inputs */
+input{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#3498db;
+    box-shadow:0 0 8px rgba(52,152,219,.5);
+}
+
+/* Buttons */
+button{
+    background:#3498db;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+/* Line */
+hr{
+    width:650px;
+    margin:35px auto;
+    border:none;
+    border-top:2px solid rgba(255,255,255,0.7);
+}
+
+/* Section Heading */
+h2{
+    width:650px;
+    margin:20px auto;
+    color:white;
+    font-size:28px;
+}
+
+/* Result Cards */
+p{
+    width:650px;
+    margin:12px auto;
+    background:white;
+    padding:15px;
+    border-left:6px solid #3498db;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    font-size:17px;
+}
+
+/* Download Button */
+a{
+    display:block;
+    width:650px;
+    margin:25px auto;
+}
+
+a button{
+    width:100%;
+    background:#27ae60;
+}
+
+a button:hover{
+    background:#1f8a4d;
+}
+
+/* Mobile Responsive */
+@media(max-width:700px){
+
+    body{
+        padding:20px;
+    }
+
+    form,
+    hr,
+    h2,
+    p,
+    a{
+        width:100%;
+    }
+
+    h1{
+        font-size:30px;
+    }
+}

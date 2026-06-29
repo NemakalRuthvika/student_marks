@@ -1,68 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Student Marks Calculator</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f2f6ff;
-            padding: 30px;
-        }
-        .box {
-            background: white;
-            max-width: 500px;
-            margin: auto;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px #ccc;
-        }
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin: 7px 0;
-        }
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 8px;
-        }
-        .result {
-            background: #e8f5e9;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-<div class="box">
-    <h2>Student Marks Calculator</h2>
+
+    <h1>🎓 Student Result Management System</h1>
 
     <form method="POST">
-        <input type="text" name="name" placeholder="Student Name" required>
-        <input type="text" name="roll" placeholder="Roll Number" required>
-        <input type="number" name="sub1" placeholder="Subject 1 Marks" required>
-        <input type="number" name="sub2" placeholder="Subject 2 Marks" required>
-        <input type="number" name="sub3" placeholder="Subject 3 Marks" required>
-        <input type="number" name="sub4" placeholder="Subject 4 Marks" required>
-        <input type="number" name="sub5" placeholder="Subject 5 Marks" required>
-        <button type="submit">Calculate</button>
+
+        <label for="name">Student Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter Student Name" required>
+
+        <label for="roll">Roll Number</label>
+        <input type="text" id="roll" name="roll" placeholder="Enter Roll Number" required>
+
+        <label for="sub1">Subject 1 Marks</label>
+        <input type="number" id="sub1" name="sub1" min="0" max="100" placeholder="Enter Marks" required>
+
+        <label for="sub2">Subject 2 Marks</label>
+        <input type="number" id="sub2" name="sub2" min="0" max="100" placeholder="Enter Marks" required>
+
+        <label for="sub3">Subject 3 Marks</label>
+        <input type="number" id="sub3" name="sub3" min="0" max="100" placeholder="Enter Marks" required>
+
+        <label for="sub4">Subject 4 Marks</label>
+        <input type="number" id="sub4" name="sub4" min="0" max="100" placeholder="Enter Marks" required>
+
+        <label for="sub5">Subject 5 Marks</label>
+        <input type="number" id="sub5" name="sub5" min="0" max="100" placeholder="Enter Marks" required>
+
+        <button type="submit">Calculate Result</button>
+
     </form>
 
     {% if result %}
-    <div class="result">
-        <h3>Report Card</h3>
-        <p>Name: {{ result.name }}</p>
-        <p>Roll No: {{ result.roll }}</p>
-        <p>Total: {{ result.total }}</p>
-        <p>Average: {{ result.average }}</p>
-        <p>Percentage: {{ result.percentage }}%</p>
-        <p>Grade: {{ result.grade }}</p>
-        <p>Result: {{ result.status }}</p>
-        <a href="/download-pdf">Download PDF Report Card</a>
-    </div>
+
+    <hr>
+
+    <h2>Student Details</h2>
+
+    <p><strong>Name :</strong> {{ result.name }}</p>
+    <p><strong>Roll No :</strong> {{ result.roll }}</p>
+
+    <h2>Subject Marks</h2>
+
+    <p><strong>Subject 1 :</strong> {{ result.marks[0] }}</p>
+    <p><strong>Subject 2 :</strong> {{ result.marks[1] }}</p>
+    <p><strong>Subject 3 :</strong> {{ result.marks[2] }}</p>
+    <p><strong>Subject 4 :</strong> {{ result.marks[3] }}</p>
+    <p><strong>Subject 5 :</strong> {{ result.marks[4] }}</p>
+
+    <h2>Result Summary</h2>
+
+    <p><strong>Total :</strong> {{ result.total }}</p>
+    <p><strong>Average :</strong> {{ result.average }}</p>
+    <p><strong>Percentage :</strong> {{ result.percentage }}%</p>
+    <p><strong>Grade :</strong> {{ result.grade }}</p>
+    <p><strong>Status :</strong> {{ result.status }}</p>
+
+    <br>
+
+    <a href="/download/{{ result.roll }}">
+        <button type="button">📄 Download PDF</button>
+    </a>
+
     {% endif %}
-</div>
+
 </body>
+
 </html>
